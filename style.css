@@ -1,4 +1,46 @@
 :root {
   --black: #000;
   --font: "Nanum Gothic", sans-serif;
+
+  --red: #ed1250;
+  --pale-yellow: #fff6da;
+  --dark-blue: #042f4b;
+  --orange: #fbc99d;
 }
+
+/*========
+  GLOBAL
+========*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+nav li {
+  cursor: pointer;
+}
+
+#content {
+  background-image: url("img/wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*============
+  TYPOGRAPHY
+============*/
+
+/*==========
+  SPECIFIC
+==========*/
