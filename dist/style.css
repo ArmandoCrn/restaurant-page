@@ -3,14 +3,15 @@
   --title-font: "Tangerine", cursive;
 
   --light-black: rgba(0, 0, 0, 0.6);
+  --white: #eee;
   --blue: #0c3149;
-  --light-blue: #0c3149;
+  --gold: #c59d5f;
+  --light-gold: #fbc99d;
 
+  /* --light-blue: #0c3149;
   --red: #ed1250;
   --pale-yellow: #fff6da;
-  --dark-blue: #042f4b;
-  --orange: #fbc99d;
-  --gold: #c59d5f;
+  --dark-blue: #042f4b; */
 }
 
 /*========
@@ -48,8 +49,7 @@ nav li {
 ============*/
 body {
   font-family: var(--font);
-  /*FIXME:*/
-  color: white;
+  color: var(--white);
 }
 
 h1 {
@@ -61,6 +61,10 @@ h1 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.p-x {
+  padding-inline: 0.3rem;
 }
 
 nav ul {
@@ -77,8 +81,27 @@ nav li.active {
   font-style: italic;
 }
 
+.hours .t-left {
+  color: var(--light-gold);
+  font-size: 1.2rem;
+}
+
+footer {
+  font-size: 1.1rem;
+}
+
 footer a {
   color: var(--gold);
+  font-size: 1.3rem;
+}
+
+.fa-github {
+  margin-left: 0.4rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: scale(1.2) translateY(-5px);
 }
 
 /*==========
@@ -88,14 +111,13 @@ footer a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* align-items: center; Se crea problemi FIXME: */
   justify-content: space-between;
 }
 
 /*|-- NAV --|*/
 nav {
   background-color: var(--blue);
-  border-bottom: 4px solid #000;
+  border-bottom: 3px solid var(--gold);
 }
 
 nav ul {
@@ -109,15 +131,12 @@ nav ul {
 /*|-- MAIN --|*/
 main {
   background-color: var(--light-black);
-  padding: 1rem;
-  max-width: 750px;
+  padding: 2rem 0.5rem;
+  border-radius: 10px;
 }
 
 .home {
   text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  gap: 1rem; */
 }
 
 h1 {
@@ -135,6 +154,43 @@ h1 {
   margin: 1.8rem auto;
 }
 
+.hours {
+  max-width: 270px;
+  margin-inline: auto;
+}
+
+.hours ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+}
+
 footer {
-  /* margin-top: auto; */
+  padding-block: 1rem;
+  text-align: center;
+}
+
+/*==============
+  MEDIA QUERIES
+==============*/
+
+@media screen and (min-width: 610px) {
+  .p-x.al-itm {
+    align-self: center;
+  }
+
+  main {
+    align-self: center;
+    padding-block: 3rem;
+  }
+
+  .home {
+    width: 600px;
+    margin-inline: auto;
+  }
 }
