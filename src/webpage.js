@@ -1,10 +1,12 @@
 import createHome from "./home";
+import createAboutUs from "./about-us";
+import createMenu from "./menu";
 
 export function createEl(el) {
   return document.createElement(el);
 }
 
-export const content = document.querySelector("#content");
+const content = document.querySelector("#content");
 
 function createNav() {
   const nav = createEl("nav");
@@ -16,6 +18,19 @@ function createNav() {
   `;
   nav.appendChild(ul);
   content.appendChild(nav);
+}
+
+function createMain() {
+  const div = createEl("div");
+  div.classList.add("p-x", "al-itm");
+
+  const main = createEl("main");
+
+  const divContent = createEl("div");
+
+  main.appendChild(divContent);
+  div.appendChild(main);
+  content.appendChild(div);
 }
 
 function createFooter() {
@@ -39,42 +54,33 @@ function liEvent() {
     if (this === home) {
       menu.classList.remove("active");
       aboutUs.classList.remove("active");
+      createHome();
     }
 
     if (this === menu) {
       home.classList.remove("active");
       aboutUs.classList.remove("active");
+      createMenu();
     }
 
     if (this === aboutUs) {
       home.classList.remove("active");
       menu.classList.remove("active");
+      createAboutUs();
     }
 
     this.classList.add("active");
-    console.log({ home, menu, aboutUs });
   }
 }
 
 export default function createWeb() {
   createNav();
-  const lItems = document.querySelectorAll("nav li");
-  lItems.forEach((li) => li.addEventListener("click", liEvent));
 
+  createMain();
   createHome();
 
   createFooter();
+
+  const lItems = document.querySelectorAll("nav li");
+  lItems.forEach((li) => li.addEventListener("click", liEvent));
 }
-
-/*
-Praticamente qui lasciamo solo la funzione che sarà presente in webpage.js 
-così che svolga il suo ruolo
-
-ma per iniziare dovrò scrivere prima cosa succede(?)
-
-vabbe praticamente in webpage.js creiamo la funzione che costruisce l'header
-il footer
-e il main
-in home.js creiamo quello che costruisce tutto ciò all'interno di main
-quando premiamo main
-*/
