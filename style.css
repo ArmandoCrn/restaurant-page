@@ -1,11 +1,14 @@
 :root {
   --black: #000;
   --font: "Nanum Gothic", sans-serif;
+  --title-font: "Tangerine", cursive;
 
+  --blue: #04446d;
   --red: #ed1250;
   --pale-yellow: #fff6da;
   --dark-blue: #042f4b;
   --orange: #fbc99d;
+  --gold: #c59d5f;
 }
 
 /*========
@@ -36,11 +39,51 @@ nav li {
   background-image: url("img/wallpaper.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 /*============
   TYPOGRAPHY
 ============*/
+body {
+  font-family: var(--font);
+  /*FIXME:*/
+  color: white;
+}
+
+h1 {
+  font-family: var(--title-font);
+}
+
+nav ul {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
 
 /*==========
   SPECIFIC
 ==========*/
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* align-items: center; Se crea problemi FIXME: */
+  justify-content: space-between;
+}
+
+/*|-- NAV --|*/
+nav {
+  background-color: var(--blue);
+  border-bottom: 4px solid #000;
+}
+
+nav ul {
+  max-width: 500px;
+  margin-inline: auto;
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  /* margin-top: auto; */
+}
