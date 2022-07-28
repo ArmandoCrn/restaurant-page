@@ -1,8 +1,10 @@
+import createHome from "./home";
+
 export function createEl(el) {
   return document.createElement(el);
 }
 
-const content = document.querySelector("#content");
+export const content = document.querySelector("#content");
 
 function createNav() {
   const nav = createEl("nav");
@@ -14,6 +16,20 @@ function createNav() {
   `;
   nav.appendChild(ul);
   content.appendChild(nav);
+}
+
+function createFooter() {
+  const footer = createEl("footer");
+  footer.innerHTML = `
+    <p>
+      Copyright &copy;2022 ArmandoCrn
+      <a href="https://github.com/ArmandoCrn" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </p>
+  `;
+
+  content.appendChild(footer);
 }
 
 function liEvent() {
@@ -45,9 +61,9 @@ export default function createWeb() {
   const lItems = document.querySelectorAll("nav li");
   lItems.forEach((li) => li.addEventListener("click", liEvent));
 
-  /*create content centrale che sia esso home, menu o about-us*/
+  createHome();
 
-  /*createFooter()*/
+  createFooter();
 }
 
 /*
