@@ -44,6 +44,7 @@ nav li {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 /*============
   TYPOGRAPHY
 ============*/
@@ -96,6 +97,20 @@ nav li.active {
   line-height: 1.4;
 }
 
+.menu h3 {
+  font-size: 1.5rem;
+}
+
+.clr {
+  color: var(--light-gold);
+}
+
+.menu .description {
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
 footer {
   font-size: 1.1rem;
 }
@@ -110,6 +125,7 @@ footer a {
 ==========*/
 #content {
   display: flex;
+  gap: 1.8rem; /*for the menu section*/
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
@@ -185,13 +201,31 @@ h1 {
   justify-content: space-between;
 }
 
-/*-- HOME --*/
+/*-- ABOUT US --*/
 .about-us .information {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/*-- MENU --*/
+.items-menu {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 1.3rem;
+}
+
+.menu img {
+  max-width: 38%;
+  height: 110px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
 /*|-- FOOTER --|*/
 
 footer {
@@ -213,7 +247,18 @@ footer {
   MEDIA QUERIES
 ==============*/
 
-@media screen and (min-width: 610px) {
+@media screen and (min-width: 500px) {
+  .items-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu img {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 630px) {
   .p-x.al-itm {
     align-self: center;
   }
