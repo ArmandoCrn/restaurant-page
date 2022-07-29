@@ -130,11 +130,16 @@ nav ul {
 }
 
 nav li {
+  transform: scale(1);
   transition: transform 0.2s;
 }
 
 nav li:hover {
   transform: scale(1.2);
+}
+
+nav li.active {
+  transform: scale(1.15);
 }
 
 /*|-- MAIN --|*/

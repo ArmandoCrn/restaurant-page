@@ -12,9 +12,9 @@ function createNav() {
   const nav = createEl("nav");
   const ul = createEl("ul");
   ul.innerHTML = `
-    <li class="active">Home</li>
-    <li>Menu</li>
-    <li>About Us</li>
+    <li tabindex="0" class="active">Home</li>
+    <li tabindex="0">Menu</li>
+    <li tabindex="0">About Us</li>
   `;
   nav.appendChild(ul);
   content.appendChild(nav);
