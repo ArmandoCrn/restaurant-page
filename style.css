@@ -212,7 +212,7 @@ h1 {
 .items-menu {
   display: grid;
   grid-template-columns: repeat(1fr);
-  gap: 1.3rem;
+  gap: 2.5rem;
 }
 
 .menu img {
