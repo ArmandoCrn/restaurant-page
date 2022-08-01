@@ -13,6 +13,4 @@ export default function createAboutUs() {
   <p>📍 Lorem Ipsum 18, Sit Amet, USA</p>
   </div>
   `;
-
-  console.log(mainContent);
 }

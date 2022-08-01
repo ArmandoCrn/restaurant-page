@@ -1,24 +1,6 @@
+import { createEl } from "./webpage";
+
 export default function createMenu() {
-  const mainContent = document.querySelector("main > div");
-  mainContent.className = "menu";
-  mainContent.innerHTML = `
-  <h1>Burger Joy</h1>
-  <div class="hr"></div>
-
-  <div class="items-menu">
-
-    <div class="menu-item">
-      <img src="../dist/img/product/img1-hamburger.png" alt="" />
-      <h3>Hamburger <span class="clr">$3.49</span></h3>
-      <p class="description">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat eos voluptatibus reprehenderit consectetur.
-      </p>
-    </div>
-
-  </div>
-
-  `;
-
   const products = [
     {
       name: "Hamburger",
@@ -51,25 +33,38 @@ export default function createMenu() {
       price: "1.99",
     },
   ];
+
   const description =
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat eos voluptatibus reprehenderit consectetur.";
-  /*fai una funzione che generi tot elementi html
-  function (product) {
-    return `
-    e sistemi tutti i cosi con il place older per i cosi e poi 
-    non scordare l'alt nella foto fai tipo product.name + photo
-    non scordare il $
-    ecc ecc ecc
+
+  const mainContent = document.querySelector("main > div");
+  mainContent.className = "menu";
+  mainContent.innerHTML = `
+  <h1>Burger Joy</h1>
+  <div class="hr"></div>
+  `;
+
+  const itemsMenu = createEl("div");
+  itemsMenu.classList.add("items-menu");
+
+  function generateItem(product) {
+    const text = `
+    <img src="../dist/img/product/img${product.url}.png" alt="${product.name} photo" />
+    <h3>${product.name} <span class="clr">$${product.price}</span></h3>
+    <p class="description">
+    ${description}
+    </p>
     `;
+
+    const menuItem = createEl("div");
+    menuItem.classList.add("menu-item");
+    menuItem.dataset.product = product.url;
+    menuItem.innerHTML = text;
+
+    return menuItem;
   }
 
-  poi magari quando deve essere chiamata si fa
-  products.forEach(product)
-  e gli passi il product all'interno della funzione superiore
-  e appendi gli oggetti al coso
-  
-  
-  */
+  products.forEach((product) => itemsMenu.appendChild(generateItem(product)));
 
-  console.log(mainContent);
+  mainContent.appendChild(itemsMenu);
 }
