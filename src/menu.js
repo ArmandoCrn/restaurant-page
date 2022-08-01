@@ -49,7 +49,7 @@ export default function createMenu() {
 
   function generateItem(product) {
     const text = `
-    <img src="../dist/img/product/img${product.url}.png" alt="${product.name} photo" />
+    <img src="img/product/img${product.url}.png" alt="${product.name} photo" />
     <h3>${product.name} <span class="clr">$${product.price}</span></h3>
     <p class="description">
     ${description}
